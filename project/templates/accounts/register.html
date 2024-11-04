@@ -1,0 +1,55 @@
+{% extends 'shared/base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="container text-center mt-3">
+    <div class="row align-items-center">
+        <div class="col">
+            <form method="post">
+            {% csrf_token %}
+                <div class="mb-3">
+                    {{ user_form.username.errors }}
+                    <label for="" class="form-label">Username</label>
+                    {{ user_form.username }}
+                </div>
+                <div class="mb-3">
+                    {{ user_form.email.errors }}
+                    <label for="" class="form-label">Email address</label>
+                    {{ user_form.email }}
+                    <div id="" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    {{ user_form.password1.errors }}
+                    <label for="" class="form-label">Password</label>
+                    {{ user_form.password1 }}
+                </div>
+                <div class="mb-3">
+                    {{ user_form.password2.errors }}
+                    <label for="" class="form-label">Password confirm</label>
+                    {{ user_form.password2 }}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">Username</h5>
+                <div class="card-body">
+                  <p class="card-text">{{ user_form.username.help_text }}</p>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-header">Password</h5>
+                <div class="card-body">
+                  <p class="card-text">{{ user_form.password1.help_text }}</p>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-header">Password confirm</h5>
+                <div class="card-body">
+                  <p class="card-text">{{ user_form.password2.help_text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'shared/base.html' %}
+{% load humanize %}
+{% block content %}
+<style>
+    body{
+        background-color: rgb(20, 20, 20);
+    }
+
+    div.card{
+        background-color: #ccc;
+    }
+
+    div.card div.card-header{
+        border: 2px solid rgb(100, 100, 100);
+    }
+</style>
+        <div class="card text-bg-primary mb-3" style="max-width: 40rem; margin: 4rem auto;">
+            <div class="card-header" style="background-image: url('{{ object.photo.url }}'); background-size: cover; background-position: center; min-height: 20rem;"></div>
+            <div class="card-body">
+                <h5 class="card-title">{{ object.brand }} {{ object.model }}</h5>
+                <p class="card-text">Factory/Model Year: {{ object.factory_year }}/{{ object.model_year }}</p>
+                <p class="card-text">Plate: {{ object.plate }}</p>
+                <p class="card-text">Price: R${{ object.value|intcomma }}</p>
+                {% if object.description %}
+                    <p class="card-text">Description:<br>{{ object.description }}</p>
+                {% endif %}
+                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+            </div>
+            {% if user.is_authenticated %}
+                <div class="card-footer mx-auto p-2" style="background-color: inherit; border: 0;">
+                    <a href="{% url 'update_car' object.pk %}"><button class="btn btn-warning">UPDATE</button></a>
+                    <a href="{% url 'delete_car' object.pk %}"><button class="btn btn-danger ms-2">DELETE</button></a>
+                </div>
+            {% endif %}
+        </div>
+{% endblock %}

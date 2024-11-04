@@ -1,0 +1,13 @@
+{% extends 'shared/base.html' %}
+{% block title %}Sell a Vehicle{% endblock %}
+{% block content %}
+<div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{% endblock %}
