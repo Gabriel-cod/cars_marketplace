@@ -20,7 +20,7 @@
                 <h5 class="card-title">{{ object.brand }} {{ object.model }}</h5>
                 <p class="card-text">Factory/Model Year: {{ object.factory_year }}/{{ object.model_year }}</p>
                 <p class="card-text">Plate: {{ object.plate }}</p>
-                <p class="card-text">Price: R${{ object.value|intcomma }}</p>
+                <p class="card-text">Price: ${{ object.value|intcomma }}</p>
                 {% if object.description %}
                     <p class="card-text">Description:<br>{{ object.description }}</p>
                 {% endif %}

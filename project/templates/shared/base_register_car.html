@@ -1,0 +1,39 @@
+<style>
+    div.input-group{
+        margin-bottom: 1rem;
+    }
+</style>
+{{ form.brand.errors }}{{ form.model.errors }}
+<div class="input-group">
+    <span class="input-group-text w-25">Brand and Model</span>
+    {{ form.brand }}
+    {{ form.model }}
+</div>
+{{ form.factory_year.errors }}{{ form.model_year.erros }}
+<div class="input-group">
+    <span class="input-group-text w-25">Factory and Model Year</span>
+    {{ form.factory_year }}
+    {{ form.model_year }}
+</div>
+{{ form.plate.errors }}
+<div class="input-group">
+    <span class="input-group-text w-25">Plate</span>
+    {{ form.plate }}
+</div>
+{{ form.description.errors }}
+<div class="input-group">
+    <span class="input-group-text w-25">Description</span>
+    {{ form.description }}
+</div>
+{{ form.value.errors }}
+<div class="input-group">
+    <span class="input-group-text w-25">Value</span>
+    <span class="input-group-text">$</span>
+    {{ form.value }}
+    <span class="input-group-text">.00</span>
+</div>
+{{ form.photo.errors }}
+<div class="mb-3">
+    <span class="input-group-text w-100">Photo</span>
+    {{ form.photo }}
+</div>

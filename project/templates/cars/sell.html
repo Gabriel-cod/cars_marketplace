@@ -1,12 +1,10 @@
 {% extends 'shared/base.html' %}
 {% block title %}Sell a Vehicle{% endblock %}
 {% block content %}
-<div>
+<div class="container-lg mx-auto mt-2">
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
+        {% include 'shared/base_register_car.html' %}
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
 </div>

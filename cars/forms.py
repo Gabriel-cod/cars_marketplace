@@ -41,8 +41,8 @@ class CarForm(forms.ModelForm):
         if factory_year is not None:
             if factory_year < 1926:
                 self.add_error('factory_year', 'It is not possible to register cars with a factory year before 1926.')
-            elif factory_year > int(datetime.now().year):
-                self.add_error('factory_year', 'It is not possible to register cars with a factory year after current year.')
+            elif factory_year > (int(datetime.now().year) + 1):
+                self.add_error('factory_year', 'It is not possible to register cars with a factory year 2 years after current year.')
         return factory_year
             
     def clean_model_year(self):
